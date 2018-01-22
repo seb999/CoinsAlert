@@ -25,7 +25,7 @@ namespace CoinsAlert.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("30000")]
+        [global::System.Configuration.DefaultSettingValueAttribute("600000")]
         public double TimerFrequency {
             get {
                 return ((double)(this["TimerFrequency"]));
@@ -35,7 +35,7 @@ namespace CoinsAlert.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=localhost;port=3306;Database=crypto;Uid=root;Pwd=Solna123@")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=localhost;port=3306;Database=crypto;Uid=root;Pwd=Porto123")]
         public string DefaultConnection {
             get {
                 return ((string)(this["DefaultConnection"]));
@@ -44,7 +44,7 @@ namespace CoinsAlert.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("sebastien.dubos@ecdc.europa.eu;marcocarola@gmail.com ")]
+        [global::System.Configuration.DefaultSettingValueAttribute("sebastien.dubos@ecdc.europa.eu;")]
         public string emailList {
             get {
                 return ((string)(this["emailList"]));
@@ -53,7 +53,7 @@ namespace CoinsAlert.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("mail.ecdcnet.europa.eu")]
+        [global::System.Configuration.DefaultSettingValueAttribute("smtp.gmail.com")]
         public string SmtpServer {
             get {
                 return ((string)(this["SmtpServer"]));
@@ -62,13 +62,25 @@ namespace CoinsAlert.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("sebastien.dubos@ecdc.europa.eu")]
+        [global::System.Configuration.DefaultSettingValueAttribute("southernblocks@gmail.com")]
         public string emailSender {
             get {
                 return ((string)(this["emailSender"]));
             }
             set {
                 this["emailSender"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("southernblocks2018++")]
+        public string emailSenderPassword {
+            get {
+                return ((string)(this["emailSenderPassword"]));
+            }
+            set {
+                this["emailSenderPassword"] = value;
             }
         }
     }

@@ -3,24 +3,27 @@
   <Profiles />
   <Settings>
     <Setting Name="TimerFrequency" Type="System.Double" Scope="Application">
-      <Value Profile="(Default)">30000</Value>
+      <Value Profile="(Default)">600000</Value>
     </Setting>
     <Setting Name="DefaultConnection" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Server=localhost;port=3306;Database=crypto;Uid=root;Pwd=Solna123@&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Server=localhost;port=3306;Database=crypto;Uid=root;Pwd=Porto123&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Server=localhost;port=3306;Database=crypto;Uid=root;Pwd=Solna123@</Value>
+      <Value Profile="(Default)">Server=localhost;port=3306;Database=crypto;Uid=root;Pwd=Porto123</Value>
     </Setting>
     <Setting Name="emailList" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">sebastien.dubos@ecdc.europa.eu;marcocarola@gmail.com </Value>
+      <Value Profile="(Default)">sebastien.dubos@ecdc.europa.eu;</Value>
     </Setting>
     <Setting Name="SmtpServer" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">mail.ecdcnet.europa.eu</Value>
+      <Value Profile="(Default)">smtp.gmail.com</Value>
     </Setting>
     <Setting Name="emailSender" Type="System.String" Scope="User">
-      <Value Profile="(Default)">sebastien.dubos@ecdc.europa.eu</Value>
+      <Value Profile="(Default)">southernblocks@gmail.com</Value>
+    </Setting>
+    <Setting Name="emailSenderPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">southernblocks2018++</Value>
     </Setting>
   </Settings>
 </SettingsFile>

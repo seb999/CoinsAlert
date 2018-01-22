@@ -27,13 +27,13 @@ namespace CoinsAlert
 
             Console.WriteLine("Timer activated");
 
-            //SetTimer();
+            SetTimer();
 
             //For debugging
-            UpdateDbWithNewCoin();
-            CheckNewKuCoin();
-            CheckNewBinanceCoin();
-            Console.WriteLine(string.Format("Checking new coins now {0}", DateTime.Now));
+            //UpdateDbWithNewCoin();
+           // CheckNewKuCoin();
+            //CheckNewBinanceCoin();
+            //Console.WriteLine(string.Format("Checking new coins now {0}", DateTime.Now));
             Console.ReadLine();
         }
 
@@ -147,8 +147,8 @@ namespace CoinsAlert
                     AppDbContext myContext = new AppDbContext(connection, false);
                     Database.SetInitializer<AppDbContext>(null);
 
-                    //List new currency that are not older than 2 days 
-                    DateTime currentDay = DateTime.Now.AddDays(-2);
+                    //List new currency that are not older than 10 minutes 
+                    DateTime currentDay = DateTime.Now.AddMinutes(-10);
                     List<binance> newCoinList = myContext.Binance.Where(p => DateTime.Compare(p.DateAdded, currentDay) > 0).Select(p => p).ToList();
 
                     if (newCoinList.Count() > 0)

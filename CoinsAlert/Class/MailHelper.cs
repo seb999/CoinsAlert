@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,7 @@ namespace CoinsAlert.Class
                 //To
                 foreach (var item in Properties.Settings.Default.emailList.Split(';'))
                 {
+                    if (item == "") continue;
                     mail.To.Add(new MailAddress(item));
                 }
                 
@@ -28,14 +30,14 @@ namespace CoinsAlert.Class
                 mail.IsBodyHtml = true;
                 mail.Body = body + "<p>&copy; 2018 - CoinsAlert - Southern Blocks</p>";
 
-                SmtpClient smtp = new SmtpClient();
-                smtp.Host = Properties.Settings.Default.SmtpServer;
+                SmtpClient smtp = new SmtpClient(Properties.Settings.Default.SmtpServer, 587);
                 smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential(Properties.Settings.Default.emailSender, Properties.Settings.Default.emailSenderPassword);
+                smtp.EnableSsl = true;
                 smtp.Send(mail);
             }
             catch (Exception ex)
             {
-
                 Console.WriteLine(ex.Message);
             }
         }
