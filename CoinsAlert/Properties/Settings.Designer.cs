@@ -44,7 +44,8 @@ namespace CoinsAlert.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("sebastien.dubos@ecdc.europa.eu;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("sebastien.dubos@ecdc.europa.eu;Shutaru1985@gmail.com;marcocarola@gmail.com;wmrs.w" +
+            "ork@gmail.com;pedro.mre@hotmail.com;")]
         public string emailList {
             get {
                 return ((string)(this["emailList"]));
@@ -81,6 +82,18 @@ namespace CoinsAlert.Properties {
             }
             set {
                 this["emailSenderPassword"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0046736527182;351916202274;351968272872;")]
+        public string phoneList {
+            get {
+                return ((string)(this["phoneList"]));
+            }
+            set {
+                this["phoneList"] = value;
             }
         }
     }

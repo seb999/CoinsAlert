@@ -25,11 +25,10 @@ namespace CoinsAlert
         {
             DbConfiguration.SetConfiguration(new MySqlEFConfiguration());
 
-            Console.WriteLine("Timer activated");
-
             SetTimer();
 
             //For debugging
+            //SmsHelper.SendEmail("sdfdsdfs");
             //UpdateDbWithNewCoin();
            // CheckNewKuCoin();
             //CheckNewBinanceCoin();
@@ -39,6 +38,8 @@ namespace CoinsAlert
 
         private static void SetTimer()
         {
+            Console.WriteLine("Timer activated");
+
             dispatcherTimer = new Timer(Properties.Settings.Default.TimerFrequency);
             dispatcherTimer.Elapsed += DispatcherTimer_Elapsed;
             dispatcherTimer.AutoReset = true;
@@ -117,18 +118,24 @@ namespace CoinsAlert
                     AppDbContext myContext = new AppDbContext(connection, false);
                     Database.SetInitializer<AppDbContext>(null);
 
-                    //List new currency that are not older than 2 days 
-                    DateTime currentDay = DateTime.Now.AddDays(-2);
+                    //List new currency that are not older than 10 min 
+                    DateTime currentDay = DateTime.Now.AddMinutes(-5);
                     List<KuCoin> newCoinList = myContext.KuCoin.Where(p => DateTime.Compare(p.DateAdded, currentDay) > 0).Select(p => p).ToList();
 
                     if (newCoinList.Count() > 0)
                     {
-                        string newCoinTemplate = "";
+                        Console.WriteLine("New coins available on KuCoin Exchange");
+
+                        string mailTemplate = "";
+                        string smsTemplate = "";
                         foreach (var coin in newCoinList)
                         {
-                            newCoinTemplate = newCoinTemplate  + "Coin :" + coin.kuCoinCoin + "<br />Name : " + coin.kuCoinName + "<br /><br />";
+                            mailTemplate = mailTemplate  + "Coin :" + coin.kuCoinCoin + "<br />Name : " + coin.kuCoinName + "<br /><br />";
+                            smsTemplate = smsTemplate + " " + coin.kuCoinCoin;
                         }
-                      // MailHelper.SendEmail("New coins available on KuCoin Exchange", newCoinTemplate);
+                        MailHelper.SendEmail("New coins available on KuCoin Exchange", mailTemplate);
+                        SmsHelper.SendEmail("New coins available on KuCoin Exchange " + smsTemplate);
+                        
                     }
                 }
                 catch (System.Exception e)
@@ -148,17 +155,22 @@ namespace CoinsAlert
                     Database.SetInitializer<AppDbContext>(null);
 
                     //List new currency that are not older than 10 minutes 
-                    DateTime currentDay = DateTime.Now.AddMinutes(-10);
+                    DateTime currentDay = DateTime.Now.AddMinutes(-5);
                     List<binance> newCoinList = myContext.Binance.Where(p => DateTime.Compare(p.DateAdded, currentDay) > 0).Select(p => p).ToList();
 
                     if (newCoinList.Count() > 0)
                     {
-                        string newCoinTemplate = "";
+                        Console.WriteLine("New coins available on Binance Exchange");
+
+                        string mailTemplate = "";
+                        string smsTemplate = "";
                         foreach (var coin in newCoinList)
                         {
-                            newCoinTemplate = newCoinTemplate + "Symbol :" + coin.binanceSymbol + "<br />Quote Asset : " + coin.binanceQuoteAsset + "<br />Base Asset : " + coin.binanceBaseAsset + "<br /><br />";
+                            mailTemplate = mailTemplate + "Symbol :" + coin.binanceSymbol + "<br />Quote Asset : " + coin.binanceQuoteAsset + "<br />Base Asset : " + coin.binanceBaseAsset + "<br /><br />";
+                            smsTemplate = smsTemplate + " " + coin.binanceSymbol;
                         }
-                        MailHelper.SendEmail("New coins available on Binance Exchange", newCoinTemplate);
+                        MailHelper.SendEmail("New coins available on Binance Exchange", mailTemplate);
+                        SmsHelper.SendEmail("New coins available on Binance Exchange " + smsTemplate);
                     }
                 }
                 catch (System.Exception e)

@@ -14,7 +14,7 @@
       <Value Profile="(Default)">Server=localhost;port=3306;Database=crypto;Uid=root;Pwd=Porto123</Value>
     </Setting>
     <Setting Name="emailList" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">sebastien.dubos@ecdc.europa.eu;</Value>
+      <Value Profile="(Default)">sebastien.dubos@ecdc.europa.eu;Shutaru1985@gmail.com;marcocarola@gmail.com;wmrs.work@gmail.com;pedro.mre@hotmail.com;</Value>
     </Setting>
     <Setting Name="SmtpServer" Type="System.String" Scope="Application">
       <Value Profile="(Default)">smtp.gmail.com</Value>
@@ -24,6 +24,9 @@
     </Setting>
     <Setting Name="emailSenderPassword" Type="System.String" Scope="User">
       <Value Profile="(Default)">southernblocks2018++</Value>
+    </Setting>
+    <Setting Name="phoneList" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0046736527182;351916202274;351968272872;</Value>
     </Setting>
   </Settings>
 </SettingsFile>

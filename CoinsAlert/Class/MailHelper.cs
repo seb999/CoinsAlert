@@ -35,6 +35,7 @@ namespace CoinsAlert.Class
                 smtp.Credentials = new NetworkCredential(Properties.Settings.Default.emailSender, Properties.Settings.Default.emailSenderPassword);
                 smtp.EnableSsl = true;
                 smtp.Send(mail);
+                Console.WriteLine("mail sent to subscribers");
             }
             catch (Exception ex)
             {
