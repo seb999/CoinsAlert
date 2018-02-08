@@ -14,6 +14,7 @@ using System.Timers;
 
 namespace CoinsAlert
 {
+    //Main
     class Program
     {
 
