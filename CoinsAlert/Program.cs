@@ -26,12 +26,16 @@ namespace CoinsAlert
         {
             DbConfiguration.SetConfiguration(new MySqlEFConfiguration());
 
-            SetTimer();
+            //For production
+            //SetTimer();
+
+            MailHelper.SendEmailTest("New coins available on KuCoin Exchange", "sdfdsfds");
+          
 
             //For debugging
             //SmsHelper.SendEmail("sdfdsdfs");
             //UpdateDbWithNewCoin();
-           // CheckNewKuCoin();
+            // CheckNewKuCoin();
             //CheckNewBinanceCoin();
             //Console.WriteLine(string.Format("Checking new coins now {0}", DateTime.Now));
             Console.ReadLine();

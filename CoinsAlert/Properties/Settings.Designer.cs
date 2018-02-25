@@ -87,7 +87,7 @@ namespace CoinsAlert.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0046736527182;351916202274;351968272872;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0046736527182;351916202274;351968272872;00393476831431;")]
         public string phoneList {
             get {
                 return ((string)(this["phoneList"]));

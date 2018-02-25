@@ -26,7 +26,7 @@
       <Value Profile="(Default)">southernblocks2018++</Value>
     </Setting>
     <Setting Name="phoneList" Type="System.String" Scope="User">
-      <Value Profile="(Default)">0046736527182;351916202274;351968272872;</Value>
+      <Value Profile="(Default)">0046736527182;351916202274;351968272872;00393476831431;</Value>
     </Setting>
   </Settings>
 </SettingsFile>
