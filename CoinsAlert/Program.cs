@@ -27,13 +27,9 @@ namespace CoinsAlert
             DbConfiguration.SetConfiguration(new MySqlEFConfiguration());
 
             //For production
-            //SetTimer();
-
-            MailHelper.SendEmailTest("New coins available on KuCoin Exchange", "sdfdsfds");
+            SetTimer();
           
-
             //For debugging
-            //SmsHelper.SendEmail("sdfdsdfs");
             //UpdateDbWithNewCoin();
             // CheckNewKuCoin();
             //CheckNewBinanceCoin();
@@ -139,7 +135,7 @@ namespace CoinsAlert
                             smsTemplate = smsTemplate + " " + coin.kuCoinCoin;
                         }
                         MailHelper.SendEmail("New coins available on KuCoin Exchange", mailTemplate);
-                        SmsHelper.SendEmail("New coins available on KuCoin Exchange " + smsTemplate);
+                        SmsHelper.SendSms("New coins available on KuCoin Exchange " + smsTemplate);
                         
                     }
                 }
@@ -175,7 +171,7 @@ namespace CoinsAlert
                             smsTemplate = smsTemplate + " " + coin.binanceSymbol;
                         }
                         MailHelper.SendEmail("New coins available on Binance Exchange", mailTemplate);
-                        SmsHelper.SendEmail("New coins available on Binance Exchange " + smsTemplate);
+                        SmsHelper.SendSms("New coins available on Binance Exchange " + smsTemplate);
                     }
                 }
                 catch (System.Exception e)

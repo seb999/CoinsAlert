@@ -9,7 +9,7 @@ namespace CoinsAlert.Class
 {
     public class SmsHelper
     {
-        public static void SendEmail(string messageContent)
+        public static void SendSms(string messageContent)
         {
             try
             {

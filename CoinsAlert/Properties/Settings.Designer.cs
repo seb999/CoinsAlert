@@ -45,7 +45,7 @@ namespace CoinsAlert.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("sebastien.dubos@ecdc.europa.eu;Shutaru1985@gmail.com;marcocarola@gmail.com;wmrs.w" +
-            "ork@gmail.com;pedro.mre@hotmail.com;")]
+            "ork@gmail.com;pedro.mre@hotmail.com;nmouro@gmail.com;")]
         public string emailList {
             get {
                 return ((string)(this["emailList"]));
@@ -75,7 +75,7 @@ namespace CoinsAlert.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("southernblocks2018++")]
+        [global::System.Configuration.DefaultSettingValueAttribute(".Sb2018++")]
         public string emailSenderPassword {
             get {
                 return ((string)(this["emailSenderPassword"]));
@@ -87,7 +87,7 @@ namespace CoinsAlert.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0046736527182;351916202274;351968272872;00393476831431;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0046736527182;00351916202274;00351968272872;00393476831431;00351917699246;")]
         public string phoneList {
             get {
                 return ((string)(this["phoneList"]));
